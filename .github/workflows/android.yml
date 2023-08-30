@@ -40,9 +40,6 @@ jobs:
         
       - name: Clean Gradle Cache
         run: ./gradlew clean
-
-      - name: Fetch submodules
-        run: git clone
         
       - name: Build with Gradle
         run: ./gradlew assembleDebug
