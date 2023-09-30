@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
 }
 
+
 android {
     namespace = rootProject.ext["applicationId"].toString()
     compileSdk = 34
