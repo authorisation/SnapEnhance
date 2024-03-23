@@ -6,8 +6,6 @@ on:
         description: 'Mark release as a Pre-release'
         required: false
         type: boolean
-  
-
 jobs:
   job_armv8:
     runs-on: macos-latest
@@ -39,6 +37,12 @@ jobs:
           alias: ${{ secrets.KEYSTORE_ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Delete unsigned file
+        run: |
+          cd app/build/outputs/apk/armv8/release/
+          setopt extended_glob
+          rm -- ^*-signed*
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -77,6 +81,12 @@ jobs:
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
+      - name: Delete unsigned file
+        run: |
+          cd app/build/outputs/apk/armv7/release/
+          setopt extended_glob
+          rm -- ^*-signed*
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -114,6 +124,12 @@ jobs:
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
+      - name: Delete unsigned file
+        run: |
+          cd app/build/outputs/apk/all/release/
+          setopt extended_glob
+          rm -- ^*-signed*
+
       - name: Upload universal
         uses: actions/upload-artifact@v4
         with:
@@ -150,6 +166,12 @@ jobs:
           alias: ${{ secrets.KEYSTORE_ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Delete unsigned file
+        run: |
+          cd manager/build/outputs/apk/release/
+          shopt -s extglob
+          rm !(*-signed*)
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
