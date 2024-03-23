@@ -41,7 +41,7 @@ jobs:
       - name: Delete unsigned file
         run: |
           cd app/build/outputs/apk/armv8/release/
-          setopt extended_glob
+          shopt extended_glob
           rm -- ^*-signed*
       
       - name: Upload artifact
@@ -84,7 +84,7 @@ jobs:
       - name: Delete unsigned file
         run: |
           cd app/build/outputs/apk/armv7/release/
-          setopt extended_glob
+          shopt extended_glob
           rm -- ^*-signed*
 
       - name: Upload artifact
@@ -127,7 +127,7 @@ jobs:
       - name: Delete unsigned file
         run: |
           cd app/build/outputs/apk/all/release/
-          setopt extended_glob
+          shopt extended_glob
           rm -- ^*-signed*
 
       - name: Upload universal
