@@ -221,20 +221,12 @@ jobs:
             snapenhance-armv7-release
             snapenhance-universal-release
             manager
-          path: |
-            armv8
-            armv7
-            universal
-            manager
+          path: bins
 
       - name: Publish APK
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: ${{ inputs.prerelease }}
-          files: |
-            armv7/*.apk
-            armv8/*.apk
-            universal/*.apk
-            manager/*.apk
+          files: bins/*.apk
           automatic_release_tag: v${{ env.version }}
