@@ -6,6 +6,11 @@ on:
         description: 'Mark release as a Pre-release'
         required: false
         type: boolean
+      publish:
+        description: 'Whether to publish the release'
+        required: false
+        type: boolean
+        default: true
 jobs:
   job_armv8:
     runs-on: macos-latest
@@ -181,6 +186,7 @@ jobs:
 
   job_release:
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.publish == true }}
     needs: [job_armv8, job_armv7, job_universal, job_manager]
     steps:
       - name: Checkout repo
