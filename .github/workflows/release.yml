@@ -233,7 +233,13 @@ jobs:
 
       - name: debug
         run: |
-          ls
+          ls armv7
+          echo "-1-1-1-1-1"
+          ls armv8
+          echo "-1-1-1-1-1"
+          ls universal
+          echo "-1-1-1-1-1"
+          ls manager
 
       - name: Publish APK
         uses: marvinpinto/action-automatic-releases@latest
@@ -241,8 +247,11 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: ${{ inputs.prerelease }}
           files: |
-            ${{ steps.sign_armv7_app.outputs.signedReleaseFile }}
-            ${{ steps.sign_armv8_app.outputs.signedReleaseFile }}
+            armv7/*.apk
+            armv8/*.apk
+            universal/*.apk
+            manager/*.apk
+            
           automatic_release_tag: v${{ env.version }}
 
           
