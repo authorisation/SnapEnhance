@@ -207,39 +207,19 @@ jobs:
           echo "version=$(cat app/build/version.txt)" >> $GITHUB_ENV
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       
-      - name: Download armv8 artifact
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: snapenhance-armv8-release
-          path: armv8
-          
-      - name: Download armv7 artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: snapenhance-armv7-release
-          path: armv7
-
-      - name: Download universal artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: snapenhance-universal-release
-          path: universal
-
-      - name: Download manager artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: manager
-          path: manager
-
-      - name: debug
-        run: |
-          ls armv7
-          echo "-1-1-1-1-1"
-          ls armv8
-          echo "-1-1-1-1-1"
-          ls universal
-          echo "-1-1-1-1-1"
-          ls manager
+          name: |
+            snapenhance-armv8-release
+            snapenhance-armv7-release
+            snapenhance-universal-release
+            manager
+          path: |
+            armv8
+            armv7
+            universal
+            manager
 
       - name: Publish APK
         uses: marvinpinto/action-automatic-releases@latest
@@ -251,8 +231,4 @@ jobs:
             armv8/*.apk
             universal/*.apk
             manager/*.apk
-            
           automatic_release_tag: v${{ env.version }}
-
-          
-  
