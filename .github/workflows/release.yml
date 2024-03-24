@@ -233,11 +233,7 @@ jobs:
 
       - name: debug
         run: |
-          ls -a
-          ls armv7
-          ls armv8
-          ls manager
-          ls universal
+          ls
 
       - name: Publish APK
         uses: marvinpinto/action-automatic-releases@latest
