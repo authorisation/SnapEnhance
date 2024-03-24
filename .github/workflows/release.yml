@@ -212,16 +212,15 @@ jobs:
         run: |
           echo "version=$(cat app/build/version.txt)" >> $GITHUB_ENV
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-      
+
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: |
-            snapenhance-armv8-release
-            snapenhance-armv7-release
-            snapenhance-universal-release
-            manager
-          path: bins
+          path: bins/
+          merge-multiple: true
+
+      - name: debug
+        run: ls bins/
 
       - name: Publish APK
         uses: marvinpinto/action-automatic-releases@latest
