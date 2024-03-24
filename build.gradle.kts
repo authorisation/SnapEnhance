@@ -16,6 +16,7 @@ rootProject.ext.set("buildHash", properties["debug_build_hash"] ?: java.security
 tasks.register("getVersion") {
     doLast {
         val versionFile = File("app/build/version.txt")
+        versionFile.parentFile.mkdirs()
         if (!versionFile.exists()) {
             versionFile.createNewFile()
         }
