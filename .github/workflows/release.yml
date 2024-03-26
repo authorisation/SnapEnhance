@@ -7,7 +7,7 @@ on:
         required: false
         type: boolean
       publish:
-        description: 'Whether to publish the release'
+        description: 'Publish release'
         required: false
         type: boolean
         default: true
@@ -186,7 +186,7 @@ jobs:
 
   job_release:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.publish == true }}
+    if: ${{ inputs.publish == true }}
     needs: [job_armv8, job_armv7, job_universal, job_manager]
     steps:
       - name: Checkout repo
