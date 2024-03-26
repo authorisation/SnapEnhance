@@ -8,25 +8,8 @@ SnapEnhance is an Xposed mod that enhances your Snapchat experience.<br/><br/>
 Please note that this project is currently in development, so bugs and crashes may occur. If you encounter any issues, we encourage you to report them. To do this simply visit our [issues](https://github.com/rhunk/SnapEnhance/issues) page and create an issue, make sure to follow the guidelines.
 </div>
 
-## Quick Start
-Requirements:
-- Rooted using Magisk or KernelSU
-- LSPosed installed and fully functional
-
-Although using this in an unrooted enviroment using something like LSPatch should be working fine, it is not recommended to do so, use at your own risk!
-
-1. Install the module APK from either this [Github repo](https://github.com/rhunk/SnapEnhance/releases) or the [LSPosed repo](https://modules.lsposed.org/module/me.rhunk.snapenhance)
-2. Turn on the module in LSPosed and make sure Snapchat is in scope
-3. Force Stop Snapchat
-4. Open the menu by clicking the [Settings Gear Icon](https://i.imgur.com/2grm8li.png)
-
-## Download 
-To Download the latest stable release, please visit the [Releases](https://github.com/rhunk/SnapEnhance/releases) page.<br/>
-You can also download the latest debug build from the [Actions](https://github.com/rhunk/SnapEnhance/actions) section.<br/>
-We no longer offer official LSPatch binaries for obvious reasons. However, you're welcome to patch them yourself, as they should theoretically work without any issues.
-
 ## Features
-<details open>
+<details closed>
   <summary>Spying & Privacy</summary>
 
   - Message logger
@@ -42,7 +25,7 @@ We no longer offer official LSPatch binaries for obvious reasons. However, you'r
   - Prevent Typing Notification
 </details>
 
-<details open>
+<details closed>
   <summary>Media Manager</summary>
 
   - Download any message in a chat (Snaps, External Media, Voice Notes, etc.)
@@ -53,7 +36,7 @@ We no longer offer official LSPatch binaries for obvious reasons. However, you'r
   - Force Source Quality
 </details>
 
-<details open>
+<details closed>
   <summary>UI & Tweaks</summary>
 
   - Disable Camera
@@ -71,7 +54,7 @@ We no longer offer official LSPatch binaries for obvious reasons. However, you'r
   - Override Startup Page
 </details>
 
-<details open>
+<details closed>
   <summary>Experimental</summary>
 
   - App Passcode
@@ -79,67 +62,6 @@ We no longer offer official LSPatch binaries for obvious reasons. However, you'r
   - My Eyes Only Bypass
   - AMOLED Dark Mode
   - Chat Export (HTML, JSON and TXT)
-</details>
-
-## FAQ
-<details>
-  <summary>AI wallpapers and the Snapchat+ badge aren't working!</summary>
-  
-  - Yeah, they're server-sided and will probably never work.
-</details>
-
-<details>
-  <summary>Can you add this feature, please?</summary>
-  
-  - Open an issue on our Github repo.
-</details>
-
-<details>
-  <summary>When will this feature become available or finish?</summary>
-  
-  - At some point.
-</details>
-
-<details>
-  <summary>Can I get banned with this?</summary>
-  
-  - Obviously, however, the risk is very low, and we have no reported cases of anyone ever getting banned while using the mod.
-</details>
-
-<details>
-  <summary>Can I PM the developers?</summary>
-  
-  - No.
-</details>
-
-<details>
-  <summary>This doesn't work!</summary>
-  
-  - Open an issue.
-</details>
-
-<details>
-  <summary>My phone isn't rooted; how do I use this?</summary>
-  
-  - You can use LSPatch in combination with SnapEnhance to run this on an unrooted device, however this is unrecommended and not considered safe.
-</details>
-
-<details>
-  <summary>Where can I download the latest stable build?</summary>
-  
-  - https://github.com/rhunk/snapenhance/releases
-</details>
-
-<details>
-  <summary>Can I use HideMyApplist with this?</summary>
-  
-  - No, this will cause some severe issues, and the mod will not be able to inject.
-</details>
-
-<details>
-  <summary>How can I translate SnapEnhance into my language?</summary>
-  
-  - We have a [Weblate](https://hosted.weblate.org/projects/snapenhance/app/) hosted repo, feel free to submit your translations there.
 </details>
 
 ## Privacy
@@ -164,17 +86,6 @@ We do not collect any user information. However, please be aware that third-part
   - [rhino](https://github.com/mozilla/rhino)
   - [libsu](https://github.com/topjohnwu/libsu)
 </details>
-
-## Contributors
-Thanks to everyone involved including the [third-party libraries](https://github.com/rhunk/SnapEnhance?tab=readme-ov-file#privacy) used!
-- [rathmerdominik](https://github.com/rathmerdominik)
-- [Flole998](https://github.com/Flole998)
-- [authorisation](https://github.com/authorisation/)
-- [RevealedSoulEven](https://github.com/revealedsouleven)
-- [iBasim](https://github.com/ibasim)
-- [xerta555](https://github.com/xerta555)
-- [TheVisual](https://github.com/TheVisual)
-- [CanerKaraca23](https://github.com/CanerKaraca23)
 
 ## Donate
 - LTC: LbBnT9GxgnFhwy891EdDKqGmpn7XtduBdE
